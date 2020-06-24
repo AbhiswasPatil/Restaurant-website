@@ -24,7 +24,6 @@ function About(props) {
             </Media>
         );
     }
-    // renderleader function implement
 
     return(
         <div className="container">
