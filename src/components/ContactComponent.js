@@ -64,7 +64,7 @@ class Contact extends Component {
                     </div>
                 </div>
                 <div className="row row-content">
-                    <div className="col-12">
+                    <div    className="col-12">
                         <h3>Send Us Your Feedback !</h3>
                     </div>
                     <div className="col-12 col-md-9">
@@ -88,7 +88,7 @@ class Contact extends Component {
                                             minLength: 'Must be greater than 2 characters',
                                             maxLength: 'Must be 15 characters or less'
                                         }}
-                                     />
+                                    />
                                 </Col>
                             </Row>
                             <Row className="form-group">
