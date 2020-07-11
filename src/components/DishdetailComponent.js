@@ -42,6 +42,7 @@ class CommentForm extends Component {
             <Button outline onClick={this.toggleModal}>
                 <span className="fa fa-pencil fa-lg"></span>Submit Comment
             </Button>
+            {/* modal for add comment */}
             <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                 <ModalHeader toggle={this.toggleModal}>Submit Comment</ModalHeader>
                 <ModalBody>
@@ -112,14 +113,14 @@ function RenderDish({dish}) {
         transformProps={{
             exitTransform: 'scale(0.5) translateY(-50%)'
         }}>
-    <Card>
-        <CardImg top src={baseUrl + dish.image} alt={dish.name} />
-        <CardBody>
-            <CardTitle>{dish.name}</CardTitle>
-            <CardText>{dish.description}</CardText>
-        </CardBody>
-    </Card>
-    </FadeTransform>
+            <Card>
+                <CardImg top src={baseUrl + dish.image} alt={dish.name} />
+                <CardBody>
+                    <CardTitle>{dish.name}</CardTitle>
+                    <CardText>{dish.description}</CardText>
+                </CardBody>
+            </Card>
+        </FadeTransform>
     );
 }
 
@@ -132,11 +133,9 @@ function RenderComments({comments, postComment, dishId}) {
                     <Stagger in>
                         {comments.map((comment) => {
                             return (
-                                <Fade in>
-                                <li key={comment.id}>
+                                <Fade in key={comment.id}>
                                 <p>{comment.comment}</p>
                                 <p>-- {comment.author} , {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}</p>
-                                </li>
                                 </Fade>
                             );
                         })}
